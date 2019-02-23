@@ -36,13 +36,13 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
+htmlcov/.vscode/
 .tox/
-.coverage
-.coverage.*
+.coverag.vscode/
+.coverag.vscode/
 .cache
-nosetests.xml
-coverage.xml
+nosetest.vscode/
+coverage.vscode/
 *.cover
 .hypothesis/
 .pytest_cache/
@@ -102,3 +102,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# visual code
+.vscode/
