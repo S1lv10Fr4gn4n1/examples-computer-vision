@@ -15,11 +15,6 @@ from multiprocessing import Pool
 
 t_start = datetime.now()
 
-def image_to_feature_vector(image, size=(32,32)):
-    # resize the image to a fixed size, then flatten the image into
-    # a list of raw pixel intensities
-    return cv2.resize(image, size).flatten()
-
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--dataset", required=True, help="path to input dataset")
@@ -40,18 +35,20 @@ def extra_feature_and_label(image_path):
     # path as the format: /path/to/dataset/{class}.{image_num}.jpg
     image = cv2.imread(image_path)
     label = image_path.split(os.path.sep)[-1].split(".")[0]
-    # construct a feature vector raw pixel intensities, then update
-    # the data matrix and labels list
+    # resize the image to a fixed size, then flatten the image into
+    # a list of raw pixel intensities
     features = cv2.resize(image, (32,32)).flatten()
     return (features, label)
 
-number_of_threads = int(os.cpu_count()/2)
+number_of_threads = os.cpu_count()
 print("[INFO] processing images using {} threads".format(number_of_threads))
-pool = Pool(int(os.cpu_count()/2))
+pool = Pool(number_of_threads)
 results = pool.map(extra_feature_and_label, image_paths)
 pool.close()
 pool.join()
 
+# construct a feature vector raw pixel intensities, then update
+# the data matrix and labels list
 labels = [l for (f, l) in results]
 data = [f for (f, l) in results]
 
