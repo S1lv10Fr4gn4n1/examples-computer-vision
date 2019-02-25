@@ -1,6 +1,5 @@
-import sys
-import os.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '../libs'))
+# https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+
 from imutils.video import VideoStream
 import imutils
 from collections import deque

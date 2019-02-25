@@ -1,8 +1,8 @@
 # USAGE
 # python download_images.py --urls urls.txt --output images/santa
 
-# import the necessary packages
-# from imutils import paths
+# https://www.pyimagesearch.com/2017/12/04/how-to-create-a-deep-learning-dataset-using-google-images/
+
 import argparse
 import requests
 import cv2

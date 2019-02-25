@@ -5,6 +5,8 @@
 # python search_bing_api.py --query "bulbasaur" --output dataset/bulbasaur
 # python search_bing_api.py --query "mewtwo" --output dataset/mewtwo
 
+#https://www.pyimagesearch.com/2018/04/09/how-to-quickly-build-a-deep-learning-image-dataset/
+
 # import the necessary packages
 from requests import exceptions
 import argparse

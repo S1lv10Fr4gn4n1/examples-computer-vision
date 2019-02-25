@@ -1,3 +1,5 @@
+# https://www.pyimagesearch.com/2016/09/26/a-simple-neural-network-with-python-and-keras/
+
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential

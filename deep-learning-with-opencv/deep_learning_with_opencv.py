@@ -1,10 +1,9 @@
+# https://www.pyimagesearch.com/2017/08/21/deep-learning-with-opencv/
 import numpy as np
 import argparse
 import time
 import cv2
 import matplotlib.pyplot as plt
-
-# https://www.pyimagesearch.com/2017/08/21/deep-learning-with-opencv/
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()

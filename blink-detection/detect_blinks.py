@@ -1,6 +1,5 @@
-import sys
-import os.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '../libs'))
+# https://www.pyimagesearch.com/2017/05/08/drowsiness-detection-opencv/
+
 from imutils.video import FileVideoStream
 from imutils.video import VideoStream
 from imutils import face_utils

@@ -1,6 +1,6 @@
-import sys
-import os.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '../libs'))
+# https://www.pyimagesearch.com/2016/10/03/bubble-sheet-multiple-choice-scanner-and-test-grader-using-omr-python-and-opencv/
+
+import os
 from imutils.perspective import four_point_transform
 from imutils import contours
 import imutils

@@ -1,6 +1,5 @@
-import sys
-import os.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '../libs'))
+# https://www.pyimagesearch.com/2016/03/28/measuring-size-of-objects-in-an-image-with-opencv/
+
 from imutils import perspective
 from imutils import contours
 import imutils

@@ -1,7 +1,5 @@
-# import the necessary packages
-import sys
-import os.path
-sys.path.append(os.path.join(os.path.dirname(__file__), '../libs'))
+# https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/
+
 from imutils.video import VideoStream
 from imutils import face_utils
 import imutils
