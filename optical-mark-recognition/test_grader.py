@@ -25,8 +25,7 @@ def plot_images(image_1, image_2, cmap_2=None, bgr2rgb_1=True, bgr2rgb_2=False):
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", default="images/test_01.png",
-	help="path to the input image")
+ap.add_argument("-i", "--image", default="images/test_01.png", help="path to the input image")
 args = vars(ap.parse_args())
 
 image_path = os.path.abspath(os.path.dirname(__file__)) + "/" + args["image"]

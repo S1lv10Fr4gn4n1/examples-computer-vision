@@ -86,7 +86,7 @@ aug = ImageDataGenerator(rotation_range=25, width_shift_range=0.1,
 
 # initialize the model
 print("[INFO] compiling model...")
-model = SmallerVGGNet.build(width=IMAGE_DIMS[1], height=IMAGE_DIMS[0],
+model = SmallerVGGNet.build(width=IMAGE_DIMS[1], hgeight=IMAGE_DIMS[0],
     depth=IMAGE_DIMS[2], classes=len(lb.classes_))
 opt = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.compile(loss="categorical_crossentropy", optimizer=opt, metrics=["accuracy"])
