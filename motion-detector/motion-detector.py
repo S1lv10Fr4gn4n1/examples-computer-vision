@@ -109,7 +109,7 @@ def close(event):
         plt.close(event.canvas.figure)
 
 # initialize matplotlib to display video feed
-anim = animation.FuncAnimation(plt.gcf(), update, interval=500)
+anim = animation.FuncAnimation(plt.gcf(), update, interval=50)
 anim._start()
 
 # attach close window event
