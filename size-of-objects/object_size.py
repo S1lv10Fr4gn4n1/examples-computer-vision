@@ -16,14 +16,15 @@ def midpoint(ptA, ptB):
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", default="images/example_01.png",
 	help="path to the input image")
-ap.add_argument("-w", "--width", type=float, default=0.955,
-	help="width of the left-most object in the image (in inches)")
+ap.add_argument("-w", "--width", type=float, default=24.257,
+	help="width of the left-most object in the image (in millimeters)")
 args = vars(ap.parse_args())
 image_file = args["image"]
 width = args["width"]
 
 # load the image, convert it to grayscale and blur it slightly
 image = cv2.imread(image_file)
+image = imutils.resize(image, width=1280)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
@@ -41,6 +42,11 @@ cnts = imutils.grab_contours(cnts)
 # 'pixels per metric' calibration variable
 (cnts, _) = contours.sort_contours(cnts)
 pixelsPerMetric = None
+
+# setup image display
+fig, ax = plt.subplots()
+fig.canvas.manager.window.showMaximized()
+fig.show()
 
 for c in cnts:
     # if the contour is not sufficiently large, ignore it
@@ -101,13 +107,16 @@ for c in cnts:
     dimB = dB / pixelsPerMetric
 
     # draw the object sizes on the image
-    cv2.putText(orig, "{:.1f}in".format(dimA),
+    cv2.putText(orig, "{:.1f}mm".format(dimA),
         (int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
-        0.65, (255, 255, 255), 2)
-    cv2.putText(orig, "{:.1f}in".format(dimB),
+        1.0, (255, 255, 255), 2)
+    cv2.putText(orig, "{:.1f}mm".format(dimB),
         (int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
-        0.65, (255, 255, 255), 2)
+        1.0, (255, 255, 255), 2)
 
     # show the output image
-    plt.imshow(orig)
-    plt.show()
+    output = cv2.cvtColor(orig, cv2.COLOR_BGR2RGB)
+    ax.imshow(output)
+    fig.canvas.draw()
+    plt.pause(1.0)
+    ax.cla()
