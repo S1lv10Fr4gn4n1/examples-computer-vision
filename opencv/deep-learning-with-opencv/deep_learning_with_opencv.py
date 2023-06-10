@@ -5,6 +5,8 @@ import time
 import cv2
 import matplotlib.pyplot as plt
 
+# Download bvlc_googlenet.caffemodel from https://github.com/BVLC/caffe/wiki/Model-Zoo
+
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", default="images/eagle.png", help="path to input image")
