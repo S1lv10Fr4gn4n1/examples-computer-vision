@@ -1,0 +1,8 @@
+coco_class_labels.txt
+deploy.prototxt
+frozen_inference_graph.pb
+pose_deploy_linevec_faster_4_stages.prototxt
+pose_iter_160000.caffemodel
+res10_300x300_ssd_iter_140000_fp16.caffemodel
+ssd_mobilenet_v2_coco_2018_03_29.pbtxt
+
